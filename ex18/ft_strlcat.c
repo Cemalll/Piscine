@@ -1,36 +1,36 @@
-#include <stdio.h>
-
-unsigned int ft_strlcat(char *dest, char *src, unsigned int size)
+unsigned int	ft_strlen(char *str)
 {
-    unsigned int dest_len = 0;
-    unsigned int src_len = 0;
-    unsigned int total_len = 0;
-    char *dest_ptr = dest;
-    
-    while (dest[dest_len] != '\0')
-        dest_len++;
-    while (src[src_len] != '\0')
-        src_len++;
-    total_len = dest_len;
+	int i;
 
-    while (*src != '\0' && dest_len + 1 < size)
-    {
-        dest[dest_len] = *src;
-        dest_len++;
-        src++;
-    }
+	i = 0;
+	while (*(str + i) != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
 
-    dest[dest_len] = '\0';
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+{
+	unsigned int s_src;
+	unsigned int s_dest;
+	unsigned int i;
 
-    // Dizginin boyutunu 'size' ile kontrol ediyoruz ve sonuna null karakteri ekliyoruz.
-    while (*src != '\0' && dest_len < size - 1)
-    {
-        dest[dest_len] = *src;
-        dest_len++;
-        src++;
-    }
-
-    dest[dest_len] = '\0';
-
-    return total_len + src_len;
+	s_src = ft_strlen(src);
+	s_dest = ft_strlen(dest);
+	i = 0;
+	if (s_dest < size)
+		s_src += s_dest;
+	else
+		s_src += size;
+	if (size > 0)
+	{
+		while (*(src + i) && (i + s_dest) < size - 1)
+		{
+			*(dest + i + s_dest) = *(src + i);
+			i++;
+		}
+		*(dest + s_dest + i) = '\0';
+	}
+	return (s_src);
 }
