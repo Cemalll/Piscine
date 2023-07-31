@@ -28,8 +28,3 @@ char	*ft_strlowcase(char	*str)
 	return (str);
 }
 
-int	main(void)
-{
-    char uppercase[] = "SAHGJDKSAFHGSDFHJVBKDS-*098*/-+GHFGHGFddFGH";
-	printf("%s\n", ft_strlowcase(uppercase));
-}

@@ -10,9 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-
 int	ft_str_is_alpha(char *str)
 {
 	while (*str != '\0')
@@ -24,9 +21,4 @@ int	ft_str_is_alpha(char *str)
 		str++;
 	}
 	return (1);
-}
-
-int	main(void)
-{
-	printf("%d\n", ft_str_is_alpha(""));
 }

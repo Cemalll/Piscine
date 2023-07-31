@@ -30,12 +30,3 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	}
 	return (0);
 }
-
-int main(){
-    char *s1="merhaba";
-    char *s2="mar";
-    unsigned int n=3;
-    int result= ft_strncmp(s1,s2,n);
-    printf("%d",result);
-    return 0;
-}

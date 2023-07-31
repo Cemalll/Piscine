@@ -22,11 +22,3 @@ char	*ft_strcpy(char *dest, char *src)
 	}
 	return (dest);
 }
-
-int	main(void)
-{
-	char	destination[20];
-	char src[]="helo";
-	ft_strcpy(destination, src);
-	printf("%s\n", destination);
-}

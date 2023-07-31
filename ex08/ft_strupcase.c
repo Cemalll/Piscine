@@ -29,8 +29,3 @@ char	*ft_strupcase(char *str)
 	return (str);
 }
 
-int	main(void)
-{
-	char	lowercase[] = "abcdefghijJKHDFDKGklmnopqrs896tu-*098*/-+vwxyz";
-	printf("%s\n", ft_strupcase(lowercase));
-}

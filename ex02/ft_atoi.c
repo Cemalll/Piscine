@@ -7,7 +7,7 @@ int		ft_atoi(char *str)
 	i = 0;
 	sign = 1;
 	result = 0;
-	while ((str[i] >= '\t' && str[i] <= '\r') || str[i] == ' ')
+	while (str[i] >= '\t' && str[i] <= '\r' || str[i] == ' ')
 		i++;
 	while (str[i] == '+' || str[i] == '-')
 	{
@@ -21,13 +21,4 @@ int		ft_atoi(char *str)
 		i++;
 	}
 	return (result * sign);
-}
-
-#include <stdio.h>
-
-
-int		main(void)
-{
-	printf("%d\n", ft_atoi("   ----+---+-26147--+-ab567"));
-
 }

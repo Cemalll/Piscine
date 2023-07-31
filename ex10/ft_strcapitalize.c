@@ -51,10 +51,3 @@ char	*ft_strcapitalize(char *str)
 	}
 	return (str);
 }
-
-int	main(void)
-{
-    char uppercase[] = "salut, coMMent tu vas ? 42mots quarante-deux; cinquante+et+un";
-	char *a = ft_strlowcase(uppercase);
-	printf("%s\n", ft_strcapitalize(a));
-}

@@ -31,11 +31,3 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 	return (dest);
 }
 
-int	main(void)
-{
-	char	destination[20];
-
-	ft_strncpy(destination, "Hello Bebeğim", 3);
-	printf("%s\n", destination);
-	return (0);
-}
