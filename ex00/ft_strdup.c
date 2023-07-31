@@ -1,19 +1,37 @@
+/* ************************************************************************** */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   ft_strdup.c                                      .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: shamlaou <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2019/08/12 16:55:55 by shamlaou     #+#   ##    ##    #+#       */
+/*   Updated: 2019/08/19 16:07:33 by shamlaou    ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
-char *ft_strdup(char *src) {
-    if (src == NULL)
-        return NULL;
-    int len = 0;
-    while (src[len] != '\0')
-        len++;
-    char *dup_str = (char *)malloc((len + 1) * sizeof(char));
-    if (dup_str == NULL)
-        return NULL;
-    int i = 0;
-    while (i < len) {
-        dup_str[i] = src[i];
-        i++;
-    }
-    dup_str[len] = '\0';
-    return dup_str;
+char	*ft_strdup(char *src)
+{
+	char	*str;
+	int		longeur;
+	int		i;
+
+	i = 0;
+	longeur = 0;
+	while (src[longeur])
+	{
+		longeur++;
+	}
+	if (!(str = malloc(sizeof(char) * longeur + 1)))
+		return (NULL);
+	while (src[i])
+	{
+		str[i] = src[i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }
