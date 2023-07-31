@@ -1,22 +1,26 @@
 char	*ft_strstr(char *str, char *to_find)
 {
-	char	*start;
-	char	*pattern;
+	int i;
+	int tofind;
 
-	if (*to_find == '\0')
-		return (str);
-	while (*str)
+	i = 0;
+	tofind = 0;
+	if (to_find[i] == '\0')
 	{
-		start = str;
-		pattern = to_find;
-		while (*str == *pattern && *str && *pattern)
-		{
-			str++;
-			pattern++;
-		}
-		if (*pattern == '\0')
-			return (start);
-		str = start + 1;
+		return (str);
 	}
-	return NULL;
+	while (str[i] != '\0')
+	{
+		tofind = 0;
+		while (str[i + tofind] == to_find[tofind])
+		{
+			if (to_find[tofind + 1] == '\0')
+			{
+				return (str + i);
+			}
+			tofind++;
+		}
+		i++;
+	}
+	return (0);
 }
