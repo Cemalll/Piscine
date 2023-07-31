@@ -33,6 +33,7 @@ char	*ft_strcapitalize(char *str)
 	int	a;
 
 	a = 0;
+	ft_strlowcase(str);
 	while (str[a] != '\0')
 	{
 		if (str[0] >= 97 && str[0] <= 122)
