@@ -9,28 +9,29 @@
 /*   Updated: 2023/08/01 15:36:07 by hayortan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
-char *ft_strstr(char *str, char *to_find)
+char	*ft_strstr(char *str, char *to_find)
 {
-    if (*to_find == '\0')
-        return str; // Edge case: an empty string is always found in any string.
+	int i;
+	int tmp;
 
-    while (*str)
-    {
-        char *str_ptr = str;
-        char *to_find_ptr = to_find;
-
-        while (*to_find_ptr && *str_ptr == *to_find_ptr)
-        {
-            str_ptr++;
-            to_find_ptr++;
-        }
-
-        if (*to_find_ptr == '\0')
-            return str; // If all characters in to_find are found, return the starting position in str.
-
-        str++;
-    }
-
-    return NULL; // to_find not found in str, return NULL.
+	if (*to_find == '\0')
+		return (str);
+	while (*str != '\0')
+	{
+		if (*str == *to_find)
+		{
+			i = 0;
+			tmp = 0;
+			while (to_find[i] != '\0')
+			{
+				if (str[i] != to_find[i])
+					tmp = 1;
+				i++;
+			}
+			if (tmp == 0)
+				return (str);
+		}
+		str++;
+	}
+	return (0);
 }
