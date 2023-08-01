@@ -30,5 +30,5 @@ char	*ft_strstr(char *str, char *to_find)
 			return (start);
 		str = start + 1;
 	}
-	return (NULL);
+	return (0);
 }
