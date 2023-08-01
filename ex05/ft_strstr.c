@@ -9,30 +9,30 @@
 /*   Updated: 2023/08/01 15:36:07 by hayortan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-char	*ft_strstr(char *str, char *to_find)
-{
-	int i;
-	int tmp;
+#include <stddef.h>
 
-	if (*to_find == '\0')
-		return (str);
-	while (*str != '\0')
-	{
-		if (*str == *to_find)
-		{
-			i = 0;
-			tmp = 0;
-			while (to_find[i] != '\0')
-			{
-				if (str[i] != to_find[i])
-					tmp = 1;
-				i++;
-			}
-			if (tmp == 0)
-				return (str);
-		}
-		str++;
-	}
-	return (0);
+char *ft_strstr(char *str, char *to_find)
+{
+    if (to_find[0] == '\0')
+        return str;
+
+    size_t i = 0;
+    size_t j;
+
+    while (str[i] != '\0')
+    {
+        j = 0;
+        while (str[i + j] == to_find[j] && str[i + j] != '\0' && to_find[j] != '\0')
+        {
+            j++;
+        }
+
+        if (to_find[j] == '\0')
+            return &str[i];
+
+        i++;
+    }
+
+    return NULL; // Instead of 0, return NULL for pointer types.
 }
 
