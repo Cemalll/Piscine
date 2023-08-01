@@ -9,7 +9,7 @@
 /*   Updated: 2023/08/01 15:36:07 by hayortan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#include <stddef.h>
 char *ft_strstr(char *str, char *to_find)
 {
     if (*to_find == '\0')
