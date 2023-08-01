@@ -10,29 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
+char *ft_strstr(char *str, char *to_find)
 {
-	int i;
-	int tofind;
+    if (*to_find == '\0')
+        return str; // Edge case: an empty string is always found in any string.
 
-	i = 0;
-	tofind = 0;
-	if (to_find[i] == '\0')
-	{
-		return (str);
-	}
-	while (str[i] != '\0')
-	{
-		tofind = 0;
-		while (str[i + tofind] == to_find[tofind])
-		{
-			if (to_find[tofind + 1] == '\0')
-			{
-				return (str + i);
-			}
-			tofind++;
-		}
-		i++;
-	}
-	return (0);
+    while (*str)
+    {
+        char *str_ptr = str;
+        char *to_find_ptr = to_find;
+
+        while (*to_find_ptr && *str_ptr == *to_find_ptr)
+        {
+            str_ptr++;
+            to_find_ptr++;
+        }
+
+        if (*to_find_ptr == '\0')
+            return str; // If all characters in to_find are found, return the starting position in str.
+
+        str++;
+    }
+
+    return NULL; // to_find not found in str, return NULL.
 }
