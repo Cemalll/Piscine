@@ -10,26 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+unsigned int	ft_strlen(char *str)
+{
+	if (!*str++)
+		return (0);
+	return (1 + ft_strlen(str));
+}
+
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	unsigned int	dest_len;
-	unsigned int	src_len;
-	unsigned int	total_len;
+	unsigned int	d_len;
+	unsigned int	s_len;
+	unsigned int	len;
+	unsigned int	i;
 
-	dest_len = 0;
-	src_len = 0;
-	total_len = 0;
-	while (dest[dest_len] != '\0')
-		dest_len++;
-	while (src[src_len] != '\0')
-		src_len++;
-	total_len = dest_len;
-	while (*src != '\0' && dest_len + 1 < size)
-	{
-		dest[dest_len] = *src;
-		dest_len++;
-		src++;
-	}
-	dest[dest_len] = '\0';
-	return (total_len + src_len);
+	d_len = ft_strlen(dest);
+	s_len = ft_strlen(src);
+	len = d_len;
+	if (size <= d_len)
+		return (size + s_len);
+	i = 0;
+	while (src[i] && len < size - 1)
+		dest[len++] = src[i++];
+	dest[len] = 0;
+	return (d_len + s_len);
 }
