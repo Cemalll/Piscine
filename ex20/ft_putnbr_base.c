@@ -53,7 +53,7 @@ void	ft_putnbr_base(int nbr, char *base)
 		if (nbr >= len)
 		{
 			ft_putnbr_base(nbr / len, base);
-			ft_putnbr_base(nbr % len, base);
+			write(1, base(nbr % base_len), 1);
 		}
 		if (nbr < len)
 			write(1, &base[nbr], 1);
