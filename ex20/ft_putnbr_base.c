@@ -39,23 +39,25 @@ int	check_base(char *base)
 void	ft_putnbr_base(int nbr, char *base)
 {
 	int	len;
+	long	num;
 
 	len = 0;
+	num = nbr;
 	while (base[len] != '\0')
 		len++;
 	if (check_base(base))
 	{
-		if (nbr < 0)
+		if (num < 0)
 		{
 			write(1, "-", 1);
-			nbr = -nbr;
+			num = -num;
 		}
-		if (nbr >= len)
+		if (num >= len)
 		{
-			ft_putnbr_base(nbr / len, base);
-			write(1, &base[nbr % len], 1);
+			ft_putnbr_base(num / len, base);
+			write(1, &base[num % len], 1);
 		}
-		if (nbr < len)
-			write(1, &base[nbr], 1);
+		if (num < len)
+			write(1, &base[num], 1);
 	}
 }
