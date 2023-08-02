@@ -29,7 +29,7 @@ int	ft_atoi(char *str)
 	}
 	while (str[i] >= 48 && str[i] <= 57)
 	{
-		result *10;
+		result *= 10;
 		result += str[i] - '0';
 		i++;
 	}
