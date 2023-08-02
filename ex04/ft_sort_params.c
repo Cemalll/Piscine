@@ -9,7 +9,6 @@
 /*   Updated: 2023/07/31 17:45:39 by hayortan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include <unistd.h>
 
 void	ft_putstr(char *str)
@@ -41,7 +40,6 @@ void	ft_swap(char **arga, char **argb)
 	temp = *arga;
 	*arga = *argb;
 	*argb = temp;
-
 }
 
 int	main(int argc, char *argv[])
